@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AethEdit 以太编辑</title>
+    <meta name="description" content="AethEdit 以太编辑：由学生组成的团队，构建校园出行与场馆服务平台。" />
+    <meta property="og:title" content="AethEdit 以太编辑" />
+    <meta property="og:description" content="由学生组成的团队，构建校园出行与场馆服务平台。" />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="AethEdit 以太编辑">
+        <span class="brand-en">AethEdit</span>
+        <span class="brand-zh">以太编辑</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#projects" data-i18n="nav.projects"></a>
+        <a href="#contact" data-i18n="nav.contact"></a>
+        <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language"></button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="intro">
+        <h1 data-i18n="intro.title"></h1>
+        <p data-i18n="intro.lead"></p>
+      </section>
+
+      <section id="projects" class="section" aria-labelledby="projects-title">
+        <h2 id="projects-title" data-i18n="projects.title"></h2>
+        <div class="cards">
+          <article class="card">
+            <span class="tag" data-i18n="projects.bd.tag"></span>
+            <h3 data-i18n="projects.bd.name"></h3>
+            <p data-i18n="projects.bd.desc"></p>
+            <ul data-i18n-list="projects.bd.points"></ul>
+          </article>
+          <article class="card">
+            <span class="tag" data-i18n="projects.qm.tag"></span>
+            <h3 data-i18n="projects.qm.name"></h3>
+            <p data-i18n="projects.qm.desc"></p>
+            <ul data-i18n-list="projects.qm.points"></ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section" aria-labelledby="contact-title">
+        <h2 id="contact-title" data-i18n="contact.title"></h2>
+        <p>
+          <span data-i18n="contact.email"></span>
+          <a href="mailto:team@aethedit.tech">team@aethedit.tech</a>
+        </p>
+        <iframe
+          class="form"
+          title="Contact AethEdit"
+          src="https://aethedit.notion.site/ebd/41cc41ba1344801c86a9cb4035a718d1"
+          loading="lazy"
+          width="100%"
+          height="600"
+          frameborder="0"
+        ></iframe>
+        <p class="note" data-i18n="contact.formNote"></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> AethEdit 以太编辑. All Rights Reserved.</p>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+/*
+  Fonts: serif headings, sans body.
+  - Chinese headings: Source Han Serif (思源宋体)
+  - English headings: New Kansas (commercial; add licensed files or an Adobe Fonts kit, see README)
+  Until those files are added, the stacks below fall back to locally installed serif fonts.
+*/
+:root {
+  --serif-en: 'New Kansas', 'Iowan Old Style', Georgia, serif;
+  --serif-zh: 'Source Han Serif SC', 'Source Han Serif', 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+  --sans: system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', 'Segoe UI', sans-serif;
+  --ink: #1a1d23;
+  --muted: #5b6270;
+  --line: #e4e6ea;
+  --bg: #fbfaf7;
+  --card: #ffffff;
+  --accent: #2b4a8b;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+h1, h2, h3, .brand {
+  font-family: var(--serif-en), var(--serif-zh);
+  font-weight: 600;
+  line-height: 1.25;
+}
+:lang(zh-CN) h1, :lang(zh-CN) h2, :lang(zh-CN) h3 {
+  font-family: var(--serif-zh), var(--serif-en);
+}
+
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem clamp(1rem, 5vw, 3rem);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: baseline; gap: 0.5rem; color: var(--ink); text-decoration: none; font-size: 1.15rem; }
+.brand-zh { font-family: var(--serif-zh); font-size: 0.95rem; color: var(--muted); }
+.nav { display: flex; align-items: center; gap: 1.25rem; }
+.nav a { color: var(--ink); text-decoration: none; padding: 0.5rem 0; }
+.nav a:hover { text-decoration: underline; }
+.lang-toggle {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 0.9rem;
+  font: inherit;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.lang-toggle:hover { border-color: var(--ink); }
+
+main { max-width: 64rem; margin: 0 auto; padding: 0 clamp(1rem, 5vw, 3rem); }
+.intro { padding: clamp(3rem, 10vw, 6rem) 0 2rem; }
+.intro h1 { margin: 0 0 1rem; font-size: clamp(2rem, 6vw, 3.25rem); max-width: 20em; }
+.intro p { margin: 0; max-width: 40rem; font-size: 1.15rem; color: var(--muted); }
+
+.section { padding: 2.5rem 0; scroll-margin-top: 4.5rem; }
+.section h2 { margin: 0 0 1.5rem; font-size: clamp(1.5rem, 4vw, 2rem); }
+
+.cards { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+.card { padding: 1.5rem; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+.card h3 { margin: 0.5rem 0; font-size: 1.3rem; }
+.card p { margin: 0 0 0.75rem; color: var(--muted); }
+.card ul { margin: 0; padding-left: 1.1rem; }
+.tag { display: inline-block; padding: 0.1rem 0.6rem; font-size: 0.85rem; color: var(--accent); border: 1px solid currentColor; border-radius: 999px; }
+
+.form { display: block; width: 100%; min-height: 600px; margin-top: 1rem; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+.note { margin: 0.75rem 0 0; font-size: 0.9rem; color: var(--muted); }
+
+.site-footer { padding: 2rem clamp(1rem, 5vw, 3rem); text-align: center; color: var(--muted); border-top: 1px solid var(--line); }
+.site-footer p { margin: 0; }
+
+@media (max-width: 480px) {
+  .nav { gap: 0.75rem; }
+  .brand-zh { display: none; }
+}
